@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Script from 'next/script';
 import Link from "next/link";
 import Image from "next/image";
+import { getSortedPostsData } from '../lib/posts';
 
-export default function App() {
+export default function App({allPostsData}) {
 	const isProd = process.env.NEXT_PUBLIC_ENVIRONMENT === "production";
 
 	return (
@@ -30,6 +31,26 @@ export default function App() {
 			<Image src="/images/profile.jpg" width={108} height={108} alt="Picture of Richard" />
 			<h1>Hello</h1>
 			<Link href="/blog">Blog</Link>
+			<ul>
+			{allPostsData.map(({ id, date, title }) => (
+				<li key={id}>
+				{title}
+				<br />
+				{id}
+				<br />
+				{date}
+				</li>
+			))}
+			</ul>
 		</>
 	)
+}
+
+export async function getStaticProps() {
+    const allPostsData = getSortedPostsData();
+    return {
+      props: {
+        allPostsData,
+      },
+    };
 }
