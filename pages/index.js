@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 
 export default function App() {
-	const isProd = process.env.ENVIRONMENT === "production";
+	const isProd = process.env.NEXT_PUBLIC_ENVIRONMENT === "production";
   console.log(process.env.NEXT_PUBLIC_ENVIRONMENT)
 
 	return (
