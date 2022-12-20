@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Script from 'next/script';
 
 export default function App() {
-	const isProd = process.env.NODE_ENV === "production";
-  console.log(isProd)
+	const isProd = process.env.ENVIRONMENT === "production";
+  console.log(process.env.ENVIRONMENT)
 
 	return (
 		<>
