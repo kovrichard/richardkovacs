@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from "next/link";
+import Image from "next/image";
 
 export default function App() {
 	const isProd = process.env.NEXT_PUBLIC_ENVIRONMENT === "production";
@@ -26,6 +27,7 @@ export default function App() {
 					</>
 				)}
 			</Head>
+			<Image src="/images/profile.jpg" width={108} height={108} alt="Picture of Richard" />
 			<h1>Hello</h1>
 			<Link href="/blog">Blog</Link>
 		</>
