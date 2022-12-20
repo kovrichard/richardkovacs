@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 export default function App() {
 	const isProd = process.env.ENVIRONMENT === "production";
-  console.log(process.env.ENVIRONMENT)
+  console.log(process.env.NEXT_PUBLIC_ENVIRONMENT)
 
 	return (
 		<>
