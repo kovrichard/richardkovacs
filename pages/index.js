@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import Link from "next/link";
 
 export default function App() {
 	const isProd = process.env.NEXT_PUBLIC_ENVIRONMENT === "production";
@@ -26,6 +27,7 @@ export default function App() {
 				)}
 			</Head>
 			<h1>Hello</h1>
+			<Link href="/blog">Blog</Link>
 		</>
 	)
 }
