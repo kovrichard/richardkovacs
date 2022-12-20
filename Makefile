@@ -1,6 +1,9 @@
-.PHONY: start stop restart sh logs
+.PHONY: build start stop restart sh logs
 
 container=nextjs
+
+build:
+	docker compose build
 
 # start all the containers
 start:
